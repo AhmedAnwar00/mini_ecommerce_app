@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mini_ecommerce_app/core/routes/app_routes.dart';
 import 'package:mini_ecommerce_app/features/auth/log_in/logic/cubit/login_cubit.dart';
 import 'package:mini_ecommerce_app/features/auth/log_in/logic/state/login_state.dart';
 
@@ -62,6 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Login successful')),
         );
+        Navigator.pushReplacementNamed(context, AppRoutes.home);
       case LoginError(:final message):
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(message)),

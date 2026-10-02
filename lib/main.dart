@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           // tested with just a hot reload.
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        initialRoute: AppRoutes.home,
+        initialRoute: AppRoutes.login,
         onGenerateRoute: AppRouter.onGenerateRoute,
         onGenerateInitialRoutes: AppRouter.onGenerateInitialRoutes,
       ),
