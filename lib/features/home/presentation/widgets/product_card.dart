@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mini_ecommerce_app/features/cart/logic/cubit/cart_cubit.dart';
 import 'package:mini_ecommerce_app/features/home/model/product.dart';
 
 class ProductCard extends StatelessWidget {
@@ -43,7 +45,12 @@ class ProductCard extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             FilledButton(
-              onPressed: () {},
+              onPressed: () {
+                context.read<CartCubit>().addToCart(product);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Added to cart')),
+                );
+              },
               child: const Text('Add to Cart'),
             ),
           ],
