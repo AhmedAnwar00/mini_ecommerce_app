@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mini_ecommerce_app/core/utils/price_formatter.dart';
 import 'package:mini_ecommerce_app/features/cart/logic/cubit/cart_cubit.dart';
 import 'package:mini_ecommerce_app/features/cart/logic/state/cart_state.dart';
 import 'package:mini_ecommerce_app/features/cart/presentation/widgets/cart_item_card.dart';
@@ -43,7 +44,7 @@ class CartScreen extends StatelessWidget {
                       style: textTheme.titleSmall,
                     ),
                     Text(
-                      'Total: \$${cartCubit.totalPrice.toStringAsFixed(2)}',
+                      'Total: ${formatPrice(cartCubit.totalPrice)}',
                       style: textTheme.titleSmall,
                     ),
                   ],

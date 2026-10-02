@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mini_ecommerce_app/core/utils/price_formatter.dart';
 import 'package:mini_ecommerce_app/features/cart/logic/cubit/cart_cubit.dart';
 import 'package:mini_ecommerce_app/features/cart/model/cart_item.dart';
 
@@ -48,7 +49,7 @@ class CartItemCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '\$${product.price.toStringAsFixed(2)}',
+                    formatPrice(product.price),
                     style: textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 4),
