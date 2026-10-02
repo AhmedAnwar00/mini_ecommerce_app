@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mini_ecommerce_app/features/home/logic/cubit/home_cubit.dart';
 import 'package:mini_ecommerce_app/features/home/logic/state/home_state.dart';
+import 'package:mini_ecommerce_app/features/home/presentation/widgets/home_cart_button.dart';
 import 'package:mini_ecommerce_app/features/home/presentation/widgets/product_card.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,10 @@ class HomeScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) => HomeCubit()..loadProducts(),
       child: Scaffold(
-        appBar: AppBar(title: const Text('Products')),
+        appBar: AppBar(
+          title: const Text('Products'),
+          actions: const [HomeCartButton()],
+        ),
         body: BlocBuilder<HomeCubit, HomeState>(
           builder: (context, state) {
             return switch (state) {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mini_ecommerce_app/core/routes/app_router.dart';
+import 'package:mini_ecommerce_app/core/routes/app_routes.dart';
 import 'package:mini_ecommerce_app/features/cart/logic/cubit/cart_cubit.dart';
-import 'package:mini_ecommerce_app/features/home/presentation/screen/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +36,9 @@ class MyApp extends StatelessWidget {
           // tested with just a hot reload.
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: const HomeScreen(),
+        initialRoute: AppRoutes.home,
+        onGenerateRoute: AppRouter.onGenerateRoute,
+        onGenerateInitialRoutes: AppRouter.onGenerateInitialRoutes,
       ),
     );
   }
